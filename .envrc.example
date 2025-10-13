@@ -1,0 +1,2 @@
+export BE_API_URL=0.0.0.0
+export VITE_API_URL=http://${BE_API_URL}:8080
