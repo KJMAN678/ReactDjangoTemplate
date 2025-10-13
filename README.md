@@ -28,9 +28,9 @@ http://127.0.0.1:5173/
 
 ```sh
 - バックエンド ruff によるコード整形
-$ docker compose run --rm backend uv run ruff check . --fix
-- linter 実行
 $ docker compose run --rm backend uv run ruff format .
+- linter 実行
+$ docker compose run --rm backend uv run ruff check . --fix
 
 - フロントエンド formatter の実行
 $ npx prettier --write frontend --log-level warn

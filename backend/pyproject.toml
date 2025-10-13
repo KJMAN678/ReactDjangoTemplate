@@ -18,4 +18,6 @@ dev = [
     "pytest==8.4.2",
     "pytest-django==4.11.1",
     "factory-boy==3.3.3",
+    "django-debug-toolbar==6.0.0",
+    "psycopg2-binary==2.9.11",
 ]

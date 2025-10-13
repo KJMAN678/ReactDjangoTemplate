@@ -1,2 +1,9 @@
 export BE_API_URL=0.0.0.0
 export VITE_API_URL=http://${BE_API_URL}:8080
+export DJANGO_SUPERUSER_USERNAME=hoge
+export DJANGO_SUPERUSER_EMAIL=hoge@test.com
+export DJANGO_SUPERUSER_PASSWORD=hogehoge
+export DJANGO_SECRET_KEY=hogehoge
+export POSTGRES_DB=hoge
+export POSTGRES_USER=hoge
+export POSTGRES_PASSWORD=hogehoge

@@ -10,7 +10,7 @@ GCPCE_EXTERNAL_IP_ADRESS = os.getenv("GCPCE_EXTERNAL_IP_ADRESS", "")
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-((3hw1$=ub*k=(54ky9n1192@&h3fz@7or(kp!8_64exrkema3"
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -20,8 +20,6 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "backend",
-    ".asia-northeast1.run.app",  # 東京リージョン
-    f"{GCPCE_EXTERNAL_IP_ADRESS}",
 ]
 
 
@@ -35,6 +33,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "corsheaders",
+    "debug_toolbar",
 ]
 
 MIDDLEWARE = [
@@ -46,6 +45,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "corsheaders.middleware.CorsMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -73,8 +73,12 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.environ.get("POSTGRES_DB"),
+        "USER": os.environ.get("POSTGRES_USER"),
+        "PASSWORD": os.environ.get("POSTGRES_PASSWORD"),
+        "HOST": "db",
+        "PORT": "5432",
     }
 }
 
