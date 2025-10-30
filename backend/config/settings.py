@@ -3,8 +3,6 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-GCPCE_EXTERNAL_IP_ADRESS = os.getenv("GCPCE_EXTERNAL_IP_ADRESS", "")
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -34,6 +32,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "corsheaders",
     "debug_toolbar",
+    "api",
 ]
 
 MIDDLEWARE = [
@@ -126,13 +125,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # frontend と backend の接続設定
 CORS_ORIGIN_WHITELIST = (
-    "http://localhost:3000",
-    "http://0.0.0.0:3000",
-    "http://127.0.0.1:3000",
-    "http://frontend:3000",
     "http://127.0.0.1:5173",
     "http://frontend:5173",
-    f"http://{GCPCE_EXTERNAL_IP_ADRESS}:5173",
-    f"http://{GCPCE_EXTERNAL_IP_ADRESS}:8080",
 )
 CORS_ALLOW_CREDENTIALS = True

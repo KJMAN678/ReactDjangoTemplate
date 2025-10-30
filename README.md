@@ -22,6 +22,8 @@ $ docker compose up -d
 # コンテナ作り直しスクリプト
 $ ./remake-container.sh
 
+docker compose run --rm backend uv run gunicorn --bind 0.0.0.0:8080 config.wsgi:application
+
 http://127.0.0.1:8080/api/hello
 http://127.0.0.1:5173/
 ```
