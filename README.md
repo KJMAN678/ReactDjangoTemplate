@@ -39,6 +39,12 @@ $ npx prettier --write frontend --log-level warn
 $ npx eslint --config frontend/eslint.config.js --fix frontend
 ```
 
+### 
+```sh
+$ uv pip install -U pip
+$ uv pip list --outdated
+```
+
 ### package-json, package-json-lock のアプデ
 ```sh
 $ cd frontend
