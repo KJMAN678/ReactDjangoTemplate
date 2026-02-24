@@ -1,4 +1,4 @@
-export BE_API_URL=0.0.0.0
+export BE_API_URL=127.0.0.1
 export VITE_API_URL=http://${BE_API_URL}:8080
 export DJANGO_SUPERUSER_USERNAME=hoge
 export DJANGO_SUPERUSER_EMAIL=hoge@test.com
