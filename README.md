@@ -55,6 +55,11 @@ $ npm install
 cd ..
 ```
 
+### uv.lock のアプデ
+```sh
+$ uv lock --upgrade-package hoge
+```
+
 - Dockerのキャッシュ削除、Build 履歴削除
 ```sh
 $ docker builder prune -f
