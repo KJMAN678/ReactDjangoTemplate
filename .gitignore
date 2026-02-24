@@ -190,3 +190,5 @@ service-account-key.json
 frontend/shared-images/*.jpg
 
 .envrc
+
+.poetry.lock
