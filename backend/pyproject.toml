@@ -21,3 +21,6 @@ dev = [
     "django-debug-toolbar==6.0.0",
     "psycopg2-binary==2.9.11",
 ]
+
+[tool.uv]
+exclude-newer = "28 days"
