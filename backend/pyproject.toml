@@ -7,7 +7,7 @@ requires-python = ">=3.12"
 dependencies = [
     "Django==6.0.2",
     "django-ninja==1.4.3",
-    "django-filter==25.1",
+    "django-filter==25.2",
     "django-cors-headers==4.9.0",
     "gunicorn==23.0.0",
 ]
